@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Introduction to R</title>
+  <title>Survival Analysis: an era into Machine Learning</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -19,8 +19,8 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'Introduction to R',
-                        subtitle: 'UCSAS 2019',
+                title: 'Survival Analysis: an era into Machine Learning',
+                        subtitle: 'Guest Lecture',
                 useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -3123,7 +3123,7 @@ slide:not(.current) .plotly.html-widget{
 <slide class=""><hgroup><h2>Getting Started</h2></hgroup><article  id="getting-started">
 
 <ul>
-<li>The source codes and necessary documentations are available at the repository: (<a href='https://github.com/mdtuhinsheikh/introR_ucsas2019' title=''>https://github.com/mdtuhinsheikh/introR_ucsas2019</a>).</li>
+<li>The source codes and necessary documentations are available at the repository: ( <a href='https://mdtuhinsheikh.github.io/MLSurv/' title=''>https://mdtuhinsheikh.github.io/MLSurv/</a>).</li>
 <li>The workshop slides are available at the <a href='https://github.com/mdtuhinsheikh/R_Intro_UCSAS2019' title=''>link</a>.</li>
 <li>Prerequisites:
 
@@ -3169,6 +3169,341 @@ slide:not(.current) .plotly.html-widget{
 <li>Data structure and basic R functions</li>
 <li>Import, export, and data management using R</li>
 </ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Machine Learning</h2></hgroup><article  id="machine-learning">
+
+<ul>
+<li>Humans learn from past experiences, <u>whereas</u>, machines follow instructions given by humans.</li>
+<li>What if human can train the machines? <span class="cite">Goodfellow, Bengio, and Courville (<a href='#ref-goodfellow2016deep' title=''>2016</a>)</span> and <span class="cite">Lee et al. (<a href='#ref-lee2018deephit' title=''>2018</a>)</span>. <span class="cite">(Goodfellow, Bengio, and Courville <a href='#ref-goodfellow2016deep' title=''>2016</a>; Lee et al. <a href='#ref-lee2018deephit' title=''>2018</a>)</span></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>An illustration of Machine Learning</h2></hgroup><article  id="an-illustration-of-machine-learning">
+
+<img height="400px" width="850px," src='./Figures/machineLearningBasics.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Basic paradigm</h2></hgroup><article  id="basic-paradigm">
+
+<img height="300px" width="950px," src='./Figures/MLbasicParadigm.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>An example of machine learning</h2></hgroup><article  id="an-example-of-machine-learning">
+
+<img height="300px" width="850px," src='./Figures/getTheCake1.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>An example of machine learning</h2></hgroup><article  id="an-example-of-machine-learning-1">
+
+<img height="300px" width="850px," src='./Figures/getTheCake2.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>An example of machine learning</h2></hgroup><article  id="an-example-of-machine-learning-2">
+
+<img height="300px" width="850px," src='./Figures/getTheCake3.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Basics of Deep Learning</h2></hgroup><article  id="basics-of-deep-learning">
+
+<ul>
+<li>\(\color{blue}{\text{Deep Learning}}\) (very similar to human neural system) is a special kind of \(\color{blue}{\text{Machine Learning}}\) <span class="cite">(Goodfellow, Bengio, and Courville <a href='#ref-goodfellow2016deep' title=''>2016</a>)</span>.</li>
+<li>Especially, useful to generalize complicated functions in high dimensional space.</li>
+<li>Synonymous terms: <code>Deep feed-forward networks&#39;,</code>feed-forward neural networks’, or `multi-layer perceptrons’ (MLPs). \(\color{blue}{\text{lovely blue}}\)</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Understanding neural system</h2></hgroup><article  id="understanding-neural-system">
+
+<img height="300px" width="850px," src='./Figures/neuroBiology.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Motivating example for deep neural network</h2></hgroup><article  id="motivating-example-for-deep-neural-network">
+
+<img height="300px" width="850px," src='./Figures/motivationalExampleOfNeuralNetwork.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Motivating example for deep neural network</h2></hgroup><article  id="motivating-example-for-deep-neural-network-1">
+
+<img height="300px" width="850px," src='./Figures/motivationalExampleOfNeuralNetwork2.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Motivating example for deep neural network</h2></hgroup><article  id="motivating-example-for-deep-neural-network-2">
+
+<img height="300px" width="850px," src='./Figures/motivationalExampleOfNeuralNetwork3.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Motivating example for deep neural network</h2></hgroup><article  id="motivating-example-for-deep-neural-network-3">
+
+<img height="300px" width="850px," src='./Figures/iphoneX.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Motivating example for deep neural network</h2></hgroup><article  id="motivating-example-for-deep-neural-network-4">
+
+<img height="300px" width="850px," src='./Figures/singleLayerNeuralNetwork.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Motivating example for deep neural network</h2></hgroup><article  id="motivating-example-for-deep-neural-network-5">
+
+<img height="300px" width="850px," src='./Figures/twoLayerNeuralNetwork.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Motivating example for deep neural network</h2></hgroup><article  id="motivating-example-for-deep-neural-network-6">
+
+<img height="300px" width="850px," src='./Figures/threeLayerNeuralNetwork.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Applications</h2></hgroup><article  id="applications">
+
+<ul>
+<li>Data mining: web click data, medical records, Google search.</li>
+<li>Signal recognition: autonomous helicopter, handwriting recognition, voice recognition, Machine translation, Anomaly detection.</li>
+<li>Self customizing program: Amazon, Netflix.</li>
+<li>On survival analysis:
+
+<ul>
+<li>Predicting patients’ survival</li>
+<li>Classifying competing risks for an event</li>
+<li>Personalized treatment recommender system</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Events in longitudinal data</h2></hgroup><article  id="events-in-longitudinal-data">
+
+<p><img height="300px" width="550px," src='./Figures/survivalData.png' title=''/> <!--    \caption{An illustration of survival data [Wang2019]} --></p>
+
+</article></slide><slide class=""><hgroup><h2>Some interesting questions</h2></hgroup><article  id="some-interesting-questions">
+
+<ul>
+<li>Analyzing patient 1, 4, 8, 9 might give us insight on which features contribute to increase the length of survival?</li>
+<li>Patients who survived to 12 months, what is probability that the event will occur after \(t\) time?</li>
+<li>A doctor might want to see what is the chance of re-hospitalizing after the patient is discharged?</li>
+<li>Can we predict the sub-types of the event (considering the sub-types are missing) based on learning the training data?</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Traditional approaches to analyse survival data</h2></hgroup><article  id="traditional-approaches-to-analyse-survival-data">
+
+<ul>
+<li><strong>Non-parametric:</strong> Kaplan-Meier, Nelson-Aalen, Life table
+
+<ul>
+<li>Useful at population level but not useful at individual level.</li>
+</ul></li>
+<li><strong>Semi-parametric:</strong> Cox proportional hazards (PH) model
+
+<ul>
+<li>the proportionality assumption and linearity of the log-risk function might not be appropriate in complex data structure.</li>
+</ul></li>
+<li><strong>Parametric:</strong> Accelerated failure time model
+
+<ul>
+<li>violation of the distribution might compromise with the consistency of the parameter estimates.</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Why Machine Learning algorithms?</h2></hgroup><article  id="why-machine-learning-algorithms">
+
+<ul>
+<li>Increasing data size</li>
+<li>Increasing model size</li>
+<li>Increasing accuracy, complexity, and real-world impact</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Applications in healthcare</h2></hgroup><article  id="applications-in-healthcare">
+
+<img height="300px" width="550px," src='./Figures/healthcare.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Applications in healthcare cont…</h2></hgroup><article  id="applications-in-healthcare-cont">
+
+<ul>
+<li><strong>Event of interest:</strong> Rehospitalization; Disease recurrence; Cancer survival.</li>
+<li><strong>Outcome:</strong> Likelihood of hospitalization within \(t\) days of discharge.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Applications in Education</h2></hgroup><article  id="applications-in-education">
+
+<img height="300px" width="550px," src='./Figures/education.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Applications in education cont…</h2></hgroup><article  id="applications-in-education-cont">
+
+<ul>
+<li><strong>Event of interest:</strong> Student dropout.</li>
+<li><strong>Outcome:</strong> Likelihood of a student being dropout within \(t\) days.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Applications in Crowdfunding</h2></hgroup><article  id="applications-in-crowdfunding">
+
+<img height="300px" width="550px," src='./Figures/crowdfunding.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Applications in Crowdfunding cont…</h2></hgroup><article  id="applications-in-crowdfunding-cont">
+
+<ul>
+<li><strong>Event of interest:</strong> Project success</li>
+<li><strong>Outcome:</strong> Likelihood of a project being successful within \(t\) days.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Machine Learning for Survival Analysis</h2></hgroup><article  id="machine-learning-for-survival-analysis">
+
+<ul>
+<li>Survival Tree: is similar to decision tree which is built by recursive splitting of tree nodes.
+
+<ul>
+<li>Bagging Survival Trees </li>
+<li>Random Survival Forest </li>
+<li>\(\color{red}{\text{Note:}}\) these algorithms are mostly useful for classification, , cannot predict time-to-event and regression.</li>
+</ul></li>
+<li>Deep learning: use deep hidden layers to extract the output based on the features.
+
+<ul>
+<li>Bayesian deep learning </li>
+<li>\(\color{red}{\text{Note:}}\) could be useful for both classification and regression.</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Previous works</h2></hgroup><article  id="previous-works">
+
+<ul>
+<li>Feed-forward non-linear proportional hazards model .
+
+<ul>
+<li>The Cox PH model (with standard notation) is</li>
+<li><span class="cite">Faraggi and Simon (<a href='#ref-faraggi1995neural' title=''>1995</a>)</span> extends the linear function \(\boldsymbol{\beta^T}\mathbf{x}\) to a non-linear `activation function’, \(g(\mathbf{x}, \boldsymbol{\theta})\)</li>
+<li>Extended the linearity assumption of log-risk with the linear combination of the covariates to non-linear relationship. In particular, used logit function with some hyper-parameters.</li>
+</ul></li>
+<li>Bayesian version of Feed-forward non-linear proportional hazards model .
+
+<ul>
+<li>This model considered normal prior for the parameters and derived the posterior distribution of the parameters.</li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Cox Proportional Hazards Model</h2></hgroup><article  id="cox-proportional-hazards-model">
+
+<ul>
+<li>Notations: \[
+\begin{align*}
+i     &amp;: \text{index for subject } (i=1, \ldots, n)\\
+t_{ij} &amp;: \text{index time for subjet } i \text{ at } jth \text{ occasion } (j=1, \ldots, n_i)\\
+Y_i(t_{ij}) &amp;: \text{repeated measurement for subject } i \text{ at time } t_{ij}\\
+T_i^* &amp;: \text{time for event for subject }  i \\
+C_i   &amp;: \text{censoring time for subject } i \\
+T_i   &amp;= \min (T_i^*, C_i), \text{observed  time for subject } i \\ 
+\delta_i &amp;= I(T_i^* \le C_i), \text{censoring indicator for subject } i
+\end{align*}
+\]</li>
+<li>Longitudinal outcome: \(Y_{ij}=\{ Y_i(t_{ij})\;, i=1,\ldots,n, \; j=1,2,\ldots,n_i\}.\)</li>
+<li>Observed survival outcome: \(\{ (T_i, \delta_i), i=1, \ldots, n \}\).</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Traditional Cox PH model</h2></hgroup><article  id="traditional-cox-ph-model">
+
+<ul>
+<li>The Cox PH model is \[
+\begin{equation}
+h_i(t | \mathbf{x}_i) = h_0(t) \exp{(\mathbf{x}&#39;_{i} \boldsymbol{\beta})} \label{coxPH}
+\end{equation}
+\] where, \(\mathbf{x}_i = (x_{i1}, \ldots, x_{ip})\) denotes the vector of covariates and \(\boldsymbol{\beta}\) are the corresponding regression coefficients.</li>
+<li>The Cox PH partial likelihood function is given by \[
+\begin{equation*}
+pl(\boldsymbol{\beta}) =  \prod_{i=1}^{D} \Big[ \dfrac{\exp(\mathbf{x}_i^T \boldsymbol{\beta})}{\sum_{j \in \mathcal{R}(T_i)} \exp(\mathbf{x}_j^T \boldsymbol{\beta})} \Big]
+\end{equation*}
+\] where, \(t_1, t_2, \ldots, t_D\) denote the ordered event times and \(\mathcal{R}(t_i)\) denotes the risk set at time \(t_i\).</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Traditional Cox PH model cont…</h2></hgroup><article  id="traditional-cox-ph-model-cont">
+
+<ul>
+<li>The corresponding the log partial likelihood function is \[
+\begin{equation}
+\ell(\boldsymbol{\beta}) =  \sum_{i=1}^{D} \Big( \mathbf{x}_i^T \boldsymbol{\beta} -  \log \sum_{j \in \mathcal{R}(t_i)} \exp(\mathbf{x}_j^T \boldsymbol{\beta}) \Big) \label{survLogLik}
+\end{equation}
+\]</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Estimation</h2></hgroup><article  id="estimation">
+
+<ul>
+<li>Maximizing the log partial likelihood function, we get the estimates of the model parameters.</li>
+<li>Evaluating the second derivative with respect to the model parameters, we calculate the information matrix.</li>
+<li>Standard error of the parameters are estimated by the inverse of the information matrix.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Cox Non-proportional Neural Network Model</h2></hgroup><article  id="cox-non-proportional-neural-network-model">
+
+<ul>
+<li>The \(\exp(\mathbf{x}&#39;_{i} \boldsymbol{\beta})\) function in  is replaced by a more general function \(g_{\boldsymbol{\theta}}(\mathbf{x})\) to accommodate non-linear relationship \[
+\begin{equation}
+h_i(t | \mathbf{x}_i) = h_0(t) \exp{(g_{\boldsymbol{\theta}}(\mathbf{x}))} \label{coxNPH}
+\end{equation}
+\]</li>
+<li>The likelihood function \[
+\begin{equation*}
+pl(\boldsymbol{\theta}) =  \prod_{i=1}^{D} \Big[ \dfrac{\exp(g_{\boldsymbol{\theta}}(\mathbf{x}_i))}{\sum_{j \in \mathcal{R}(T_i)} \exp(g_{\boldsymbol{\theta}}(\mathbf{x}_i))} \Big]
+\end{equation*}    
+\]</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Cox Non-proportional Neural Network Model cont..</h2></hgroup><article  id="cox-non-proportional-neural-network-model-cont..">
+
+<ul>
+<li>Instead of optimizing the \(\eqref{survLogLik}\), the following loss function is optimized \[
+\begin{equation}
+-\dfrac{1}{N_{\delta=1}} \sum_{i=1}^{D} \Big( g_{\boldsymbol{\theta}}(\mathbf{x}_i) -  \log \sum_{j \in \mathcal{R}(t_i)} \exp(g_{\boldsymbol{\theta}}(\mathbf{x}_i)) \Big) + \lambda ||\boldsymbol{\theta}||^2_2 \label{loss}
+\end{equation}
+\] where, \(N_{\delta=1}\) is the number of patients with an observable event and \(\lambda\) is the \(\ell_2\) regularization parameter.</li>
+<li>Gradient descent optimization is used to minimize \(\eqref{loss}\).</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Details on layer mechanism</h2></hgroup><article  id="details-on-layer-mechanism">
+
+<img height="300px" width="550px," src='./Figures/detail1.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Details on layer mechanism cont…</h2></hgroup><article  id="details-on-layer-mechanism-cont">
+
+<img height="300px" width="550px," src='./Figures/detail2.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Computing Gradient: Backpropagation</h2></hgroup><article  id="computing-gradient-backpropagation">
+
+<img height="300px" width="550px," src='./Figures/detail3.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Computing Gradient: Backpropagation cont..</h2></hgroup><article  id="computing-gradient-backpropagation-cont..">
+
+<ul>
+<li>How does a small change in one weight (e.g. \(w^{(2)}_1\)) affect the final loss \(J(\mathbf{w})\))? \[
+\begin{equation*}
+\dfrac{\partial J}{\partial w^{(2)}_1} = \dfrac{\partial J}{\partial \hat{y}} \dfrac{\partial \hat{y}}{\partial w^{(2)}_1}      
+\end{equation*} 
+\]</li>
+<li>How does a small change in one weight (e.g. \(w^{(1)}_1\)) affect the final loss \(J(\mathbf{w})\))? \[
+\begin{equation*}
+     \dfrac{\partial J}{\partial w^{(1)}_1} = \dfrac{\partial J}{\partial \hat{y}} \dfrac{\partial \hat{y}}{\partial z} \dfrac{\partial z}{\partial w^{(1)}_1}
+\end{equation*} 
+\]</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Gradient descent optimization</h2></hgroup><article  id="gradient-descent-optimization">
+
+<ul>
+<li>Initialize weights randomly \(\sim N(0, \sigma^2)\)</li>
+<li>Loop until convergence
+
+<ul>
+<li>Compute gradient, \(\dfrac{\partial J(\mathbf{w})}{\partial \mathbf{w}}\)</li>
+<li>Update weights, \(\mathbf{w}^{(t+1)} \leftarrow \mathbf{w}^{(t)} - \eta \dfrac{\partial J(\mathbf{w})}{\partial \mathbf{w}}\), where \(\eta\) is called the learning rate.</li>
+</ul></li>
+<li>Return weights.</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Complex Loss Function</h2></hgroup><article  id="complex-loss-function">
+
+<img height="300px" width="550px," src='./Figures/complexLoss.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Neural network for survival</h2></hgroup><article  id="neural-network-for-survival">
+
+<img height="300px" width="550px," src='./Figures/neuralNetworkCox.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Deep neural network for survival</h2></hgroup><article  id="deep-neural-network-for-survival">
+
+<img height="300px" width="550px," src='./Figures/DeepNeuralNetworkCox.png' title=''/>
+
+</article></slide><slide class=""><hgroup><h2>Performance of DeepSurv</h2></hgroup><article  id="performance-of-deepsurv">
+
+<ul>
+<li>Evaluation Metric: Concordance (C) Index</li>
+<li>It is a rank order statistic for predictions against true outcomes.</li>
+<li>The index is calculated as the ratio of the concordant pairs to the total comparable pairs.</li>
+<li>Given the comparable instance pair \((i, j)\), with \(t_i\) and \(t_j\) are the actual observed times and \(S(t_i)\) and \(S(t_j)\) are the predicted survival times,
+
+<ul>
+<li>The pair \((i, j)\) is concordant if \(t_i &gt; t_j\) and \(S(t_i) &gt; S(t_j)\).</li>
+<li>The pair \((i, j)\) is discordant if \(t_i &gt; t_j\) and \(S(t_i) &lt; S(t_j)\).</li>
+</ul></li>
+<li>The concordance probability \(=Pr(\hat{T}_i &lt; \hat{T}_j | T_i &lt; T_j)\) measures the concordance between the rankings of actual values and predicted values.</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Outline</h2></hgroup><article  id="outline">
@@ -3889,7 +4224,19 @@ head(salaries)
 <ul>
 <li>Good luck with coding R.</li>
 <li>Feel free to contact for further queries: <a href='mailto:mdtuhin.sheikh@uconn.edu' title=''>mdtuhin.sheikh@uconn.edu</a>.</li>
-</ul></article></slide>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>References</h2></hgroup><article  id="references" class="unnumbered">
+
+<div id="refs" class="references">
+<div id="ref-faraggi1995neural">
+<p>Faraggi, David, and Richard Simon. 1995. “A Neural Network Model for Survival Data.” <em>Statistics in Medicine</em> 14 (1): 73–82.</p></div>
+
+<div id="ref-goodfellow2016deep">
+<p>Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. 2016. <em>Deep Learning</em>. MIT press.</p></div>
+
+<div id="ref-lee2018deephit">
+<p>Lee, Changhee, William R Zame, Jinsung Yoon, and Mihaela van der Schaar. 2018. “Deephit: A Deep Learning Approach to Survival Analysis with Competing Risks.” In <em>Thirty-Second Aaai Conference on Artificial Intelligence</em>.</p></div></div></article></slide>
 
 
   <slide class="backdrop"></slide>

@@ -7,8 +7,10 @@ slides > slide.title-slide hgroup h2 {
   font-size: 30px;
   letter-spacing: 10;
 }
+
 ul {
   display: block;
+/*  font-family: Times New Roman; */
   font-size: 25px;
   margin-top: 0;
   margin-bottom: 0;
@@ -17,6 +19,7 @@ ul {
   #  font-weight: bold;
   color: black;
 }
+
 
 /* Pretty print */
   

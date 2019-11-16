@@ -1,18 +1,22 @@
 ---
-title: "Introduction to R"
-subtitle: "UCSAS 2019"
+title: "Survival Analysis: an era into Machine Learning"
+subtitle: "Guest Lecture"
 author: Tuhin Sheikh, Department of Statistics, UConn
 date: ""
 output: 
   ioslides_presentation:
     css: style.css
     widescreen: true
+bibliography: Bibliography.bib
+link-citations: yes
+linkcolor: blue
 #font-family: 'Helvetica'
 #css: custom.css
 #output: slidy_presentation
 #footer: "UCSAS 2019"
 #output: rmarkdown::github_document
 #output: revealjs::revealjs_presentation
+#mainfont: Times New Roman
 ---
 
 
@@ -22,7 +26,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ## Getting Started
-- The source codes and necessary documentations are available at the repository: (https://github.com/mdtuhinsheikh/introR_ucsas2019).
+- The source codes and necessary documentations are available at the repository: ( https://mdtuhinsheikh.github.io/MLSurv/).
 - The workshop slides are available at the [link](https://github.com/mdtuhinsheikh/R_Intro_UCSAS2019).
 - Prerequisites: 
   + [R](https://cran.r-project.org/) and [Rstudio](https://www.rstudio.com/products/rstudio/download/#download) have been installed.
@@ -47,6 +51,260 @@ knitr::opts_chunk$set(echo = FALSE)
   + The ecosystem of R programming
   + Data structure and basic R functions
   + Import, export, and data management using R
+
+## Machine Learning
+- Humans learn from past experiences, <u>whereas</u>, machines follow instructions given by humans.
+- What if human can train the machines? @goodfellow2016deep and @lee2018deephit. [@goodfellow2016deep; @lee2018deephit]
+
+
+## An illustration of Machine Learning
+![](./Figures/machineLearningBasics.png){width=850px, height=400px}
+
+## Basic paradigm
+![](./Figures/MLbasicParadigm.png){width=950px, height=300px}
+
+## An example of machine learning
+![](./Figures/getTheCake1.png){width=850px, height=300px}
+
+
+## An example of machine learning
+![](./Figures/getTheCake2.png){width=850px, height=300px}
+
+## An example of machine learning
+![](./Figures/getTheCake3.png){width=850px, height=300px}
+
+## Basics of Deep Learning
+- $\color{blue}{\text{Deep Learning}}$ (very similar to human neural system) is a special kind of $\color{blue}{\text{Machine Learning}}$ [@goodfellow2016deep].
+- Especially, useful to generalize complicated functions in high dimensional space.
+- Synonymous terms: `Deep feed-forward networks', `feed-forward neural networks', or `multi-layer perceptrons' (MLPs). $\color{blue}{\text{lovely blue}}$
+
+
+## Understanding neural system
+![](./Figures/neuroBiology.png){width=850px, height=300px}
+
+
+## Motivating example for deep neural network
+![](./Figures/motivationalExampleOfNeuralNetwork.png){width=850px, height=300px}
+
+## Motivating example for deep neural network
+![](./Figures/motivationalExampleOfNeuralNetwork2.png){width=850px, height=300px}
+
+## Motivating example for deep neural network
+![](./Figures/motivationalExampleOfNeuralNetwork3.png){width=850px, height=300px}
+
+
+## Motivating example for deep neural network
+![](./Figures/iphoneX.png){width=850px, height=300px}
+
+
+## Motivating example for deep neural network
+![](./Figures/singleLayerNeuralNetwork.png){width=850px, height=300px}
+
+
+## Motivating example for deep neural network
+![](./Figures/twoLayerNeuralNetwork.png){width=850px, height=300px}
+
+
+## Motivating example for deep neural network
+![](./Figures/threeLayerNeuralNetwork.png){width=850px, height=300px}
+
+## Applications
+- Data mining: web click data, medical records, Google search.
+- Signal recognition: autonomous helicopter, handwriting recognition, voice recognition, Machine translation, Anomaly detection.
+- Self customizing program: Amazon, Netflix.
+- On survival analysis:
+  + Predicting patients' survival
+  + Classifying competing risks for an event
+  + Personalized treatment recommender system
+
+
+## Events in longitudinal data
+![](./Figures/survivalData.png){width=550px, height=300px}
+<!--    \caption{An illustration of survival data [Wang2019]} -->
+
+## Some interesting questions
+- Analyzing patient 1, 4, 8, 9 might give us insight on which features contribute to increase the length of survival?
+- Patients who survived to 12 months, what is probability that the event will occur after $t$ time?
+- A doctor might want to see what is the chance of re-hospitalizing after the patient is discharged?
+- Can we predict the sub-types of the event (considering the sub-types are missing) based on learning the training data?
+
+## Traditional approaches to analyse survival data
+- **Non-parametric:** Kaplan-Meier, Nelson-Aalen, Life table
+  + Useful at population level but not useful at individual level.
+- **Semi-parametric:** Cox proportional hazards (PH) model
+  + the proportionality assumption and linearity of the log-risk function might not be appropriate in complex data structure.
+- **Parametric:** Accelerated failure time model
+  + violation of the distribution might compromise with the consistency of the parameter estimates.
+
+
+## Why Machine Learning algorithms?
+- Increasing data size
+- Increasing model size
+- Increasing accuracy, complexity, and real-world impact
+
+## Applications in healthcare
+![](./Figures/healthcare.png){width=550px, height=300px}
+
+## Applications in healthcare cont...
+- **Event of interest:** Rehospitalization; Disease recurrence; Cancer survival.
+- **Outcome:** Likelihood of hospitalization within $t$ days of discharge. 
+
+## Applications in Education
+![](./Figures/education.png){width=550px, height=300px}
+
+## Applications in education cont...
+- **Event of interest:** Student dropout.
+- **Outcome:** Likelihood of a student being dropout within $t$ days. 
+
+## Applications in Crowdfunding
+![](./Figures/crowdfunding.png){width=550px, height=300px}
+
+## Applications in Crowdfunding cont...
+- **Event of interest:** Project success
+- **Outcome:** Likelihood of a project being successful within $t$ days.
+
+
+## Machine Learning for Survival Analysis
+- Survival Tree: is similar to decision tree which is built by recursive splitting of tree nodes. 
+  + Bagging Survival Trees \citep{hothorn2004bagging}
+  + Random Survival Forest \citep{ishwaran2008random}
+  + $\color{red}{\text{Note:}}$ these algorithms are mostly useful for classification, \underline{however}, cannot predict time-to-event and regression.
+- Deep learning: use deep hidden layers to extract the output based on the features. 
+  + Bayesian deep learning \citep{polson2017deep, ranganath2016deep}
+  + $\color{red}{\text{Note:}}$ could be useful for both classification and regression.
+
+## Previous works
+- Feed-forward non-linear proportional hazards model \citep{faraggi1995neural}.
+  + The Cox PH model (with standard notation) is 
+  + @faraggi1995neural extends the linear function $\boldsymbol{\beta^T}\mathbf{x}$ to a non-linear `activation function', $g(\mathbf{x}, \boldsymbol{\theta})$
+  + Extended the linearity assumption of log-risk with the linear combination of the covariates to non-linear relationship. In particular, used logit function with some hyper-parameters.
+- Bayesian version of Feed-forward non-linear proportional hazards model \citep{faraggi1997bayesian}.    
+  + This model considered normal prior for the parameters and derived the posterior distribution of the parameters.
+
+## Cox Proportional Hazards Model
+- Notations: 
+$$
+\begin{align*}
+i     &: \text{index for subject } (i=1, \ldots, n)\\
+t_{ij} &: \text{index time for subjet } i \text{ at } jth \text{ occasion } (j=1, \ldots, n_i)\\
+Y_i(t_{ij}) &: \text{repeated measurement for subject } i \text{ at time } t_{ij}\\
+T_i^* &: \text{time for event for subject }  i \\
+C_i   &: \text{censoring time for subject } i \\
+T_i   &= \min (T_i^*, C_i), \text{observed  time for subject } i \\ 
+\delta_i &= I(T_i^* \le C_i), \text{censoring indicator for subject } i
+\end{align*}
+$$
+- Longitudinal outcome: $Y_{ij}=\{ Y_i(t_{ij})\;, i=1,\ldots,n, \; j=1,2,\ldots,n_i\}.$
+- Observed survival outcome: $\{ (T_i, \delta_i), i=1, \ldots, n \}$.
+
+
+## Traditional Cox PH model
+- The Cox PH model is 
+$$
+\begin{equation}
+h_i(t | \mathbf{x}_i) = h_0(t) \exp{(\mathbf{x}'_{i} \boldsymbol{\beta})} \label{coxPH}
+\end{equation}
+$$
+where, $\mathbf{x}_i = (x_{i1}, \ldots, x_{ip})$ denotes the vector of covariates and $\boldsymbol{\beta}$ are the corresponding regression coefficients.
+- The Cox PH partial likelihood function is given by
+$$
+\begin{equation*}
+pl(\boldsymbol{\beta}) =  \prod_{i=1}^{D} \Big[ \dfrac{\exp(\mathbf{x}_i^T \boldsymbol{\beta})}{\sum_{j \in \mathcal{R}(T_i)} \exp(\mathbf{x}_j^T \boldsymbol{\beta})} \Big]
+\end{equation*}
+$$
+where, $t_1, t_2, \ldots, t_D$ denote the ordered event times and $\mathcal{R}(t_i)$ denotes the risk set at time $t_i$.
+
+## Traditional Cox PH model cont...
+- The corresponding the log partial likelihood function is 
+$$
+\begin{equation}
+\ell(\boldsymbol{\beta}) =  \sum_{i=1}^{D} \Big( \mathbf{x}_i^T \boldsymbol{\beta} -  \log \sum_{j \in \mathcal{R}(t_i)} \exp(\mathbf{x}_j^T \boldsymbol{\beta}) \Big) \label{survLogLik}
+\end{equation}
+$$
+
+## Estimation
+- Maximizing the log partial likelihood function, we get the estimates of the model parameters.
+- Evaluating the second derivative with respect to the model parameters, we calculate the information matrix.
+- Standard error of the parameters are estimated by the inverse of the information matrix.
+
+## Cox Non-proportional Neural Network Model
+- The $\exp(\mathbf{x}'_{i} \boldsymbol{\beta})$ function in \eqref{coxPH} is replaced by a more general function $g_{\boldsymbol{\theta}}(\mathbf{x})$ to accommodate non-linear relationship
+$$
+\begin{equation}
+h_i(t | \mathbf{x}_i) = h_0(t) \exp{(g_{\boldsymbol{\theta}}(\mathbf{x}))} \label{coxNPH}
+\end{equation}
+$$
+- The likelihood function
+$$
+\begin{equation*}
+pl(\boldsymbol{\theta}) =  \prod_{i=1}^{D} \Big[ \dfrac{\exp(g_{\boldsymbol{\theta}}(\mathbf{x}_i))}{\sum_{j \in \mathcal{R}(T_i)} \exp(g_{\boldsymbol{\theta}}(\mathbf{x}_i))} \Big]
+\end{equation*}    
+$$
+
+## Cox Non-proportional Neural Network Model cont..
+- Instead of optimizing the $\eqref{survLogLik}$, the following loss function is optimized
+$$
+\begin{equation}
+-\dfrac{1}{N_{\delta=1}} \sum_{i=1}^{D} \Big( g_{\boldsymbol{\theta}}(\mathbf{x}_i) -  \log \sum_{j \in \mathcal{R}(t_i)} \exp(g_{\boldsymbol{\theta}}(\mathbf{x}_i)) \Big) + \lambda ||\boldsymbol{\theta}||^2_2 \label{loss}
+\end{equation}
+$$
+where, $N_{\delta=1}$ is the number of patients with an observable event and $\lambda$ is the $\ell_2$ regularization parameter.
+- Gradient descent optimization is used to minimize $\eqref{loss}$.
+
+
+
+## Details on layer mechanism
+![](./Figures/detail1.png){width=550px, height=300px}
+
+
+## Details on layer mechanism cont...
+![](./Figures/detail2.png){width=550px, height=300px}
+
+
+## Computing Gradient: Backpropagation
+![](./Figures/detail3.png){width=550px, height=300px}
+
+## Computing Gradient: Backpropagation cont..
+- How does a small change in one weight (e.g.\ $w^{(2)}_1$) affect the final loss $J(\mathbf{w})$)?
+$$
+\begin{equation*}
+\dfrac{\partial J}{\partial w^{(2)}_1} = \dfrac{\partial J}{\partial \hat{y}} \dfrac{\partial \hat{y}}{\partial w^{(2)}_1}      
+\end{equation*} 
+$$
+- How does a small change in one weight (e.g.\ $w^{(1)}_1$) affect the final loss $J(\mathbf{w})$)?
+$$
+\begin{equation*}
+       \dfrac{\partial J}{\partial w^{(1)}_1} = \dfrac{\partial J}{\partial \hat{y}} \dfrac{\partial \hat{y}}{\partial z} \dfrac{\partial z}{\partial w^{(1)}_1}
+\end{equation*} 
+$$      
+
+## Gradient descent optimization
+- Initialize weights randomly $\sim N(0, \sigma^2)$
+- Loop until convergence
+  + Compute gradient, $\dfrac{\partial J(\mathbf{w})}{\partial \mathbf{w}}$
+  + Update weights, $\mathbf{w}^{(t+1)} \leftarrow \mathbf{w}^{(t)} - \eta \dfrac{\partial J(\mathbf{w})}{\partial \mathbf{w}}$, where $\eta$ is called the learning rate. 
+- Return weights.
+
+## Complex Loss Function
+![](./Figures/complexLoss.png){width=550px, height=300px}
+
+
+## Neural network for survival
+![](./Figures/neuralNetworkCox.png){width=550px, height=300px}
+
+
+## Deep neural network for survival
+![](./Figures/DeepNeuralNetworkCox.png){width=550px, height=300px}
+
+
+## Performance of DeepSurv
+- Evaluation Metric: Concordance (C) Index
+- It is a rank order statistic for predictions against true outcomes.
+- The index is calculated as the ratio of the concordant pairs to the total comparable pairs.
+- Given the comparable instance pair $(i, j)$, with $t_i$ and $t_j$ are the actual observed times and $S(t_i)$ and $S(t_j)$ are the predicted survival times,
+  + The pair $(i, j)$ is concordant if $t_i > t_j$ and $S(t_i) > S(t_j)$. 
+  + The pair $(i, j)$ is discordant if $t_i > t_j$ and $S(t_i) < S(t_j)$.
+- The concordance probability $=Pr(\hat{T}_i < \hat{T}_j | T_i < T_j)$ measures the concordance between the rankings of actual values and predicted values.
 
 ## Outline
 - R Basics
@@ -567,6 +825,8 @@ and the R Core Team.
 ## Thanks
 - Good luck with coding R.
 - Feel free to contact for further queries: mdtuhin.sheikh@uconn.edu.
+
+## References
 
 
 
