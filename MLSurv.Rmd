@@ -352,14 +352,14 @@ pl(\boldsymbol{\theta}) =  \prod_{i=1}^{D} \Big[ \dfrac{\exp(g_{\boldsymbol{\the
 $$
 
 ## Cox Non-proportional Neural Network Model cont..
-- Instead of optimizing the $\eqref{survLogLik}$, the following loss function is optimized
+- The following loss function is optimized
 $$
 \begin{equation}
 -\dfrac{1}{N_{\delta=1}} \sum_{i=1}^{D} \Big( g_{\boldsymbol{\theta}}(\mathbf{x}_i) -  \log \sum_{j \in \mathcal{R}(t_i)} \exp(g_{\boldsymbol{\theta}}(\mathbf{x}_i)) \Big) + \lambda ||\boldsymbol{\theta}||^2_2 \label{loss}
 \end{equation}
 $$
 where, $N_{\delta=1}$ is the number of patients with an observable event and $\lambda$ is the $\ell_2$ regularization parameter.
-- Gradient descent optimization is used to minimize $\eqref{loss}$.
+- Gradient descent optimization is used to minimize the loss..
 
 
 
