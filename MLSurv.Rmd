@@ -186,30 +186,27 @@ res
 - Dataset: **Boston** from **MASS** package in R.
 ```{r echo=TRUE}
 set.seed(500)
-data <- Boston
+data(Boston, package = "MASS")
 names(Boston)
-index <- sample(1:nrow(data),round(0.75*nrow(data)))
-train <- data[index,]
-test <- data[-index,]
+index <- sample(1:nrow(Boston), round(0.75*nrow(Boston)))
+train <- Boston[index, ]
+test <- Boston[-index, ]
 lm.fit <- glm(medv~., data=train)
-pr.lm <- predict(lm.fit,test)
+pr.lm <- predict(lm.fit, test)
 MSE.lm <- sum((pr.lm - test$medv)^2)/nrow(test)
 ```
-
 ## An example of DNN cont...
 - For more detail of the data: '?Boston'
 - Performing newral network model on the Boston data
 ```{r echo = TRUE}
-maxs <- apply(data, 2, max) 
-mins <- apply(data, 2, min)
-scaled <- as.data.frame(scale(data, center = mins, 
-              scale = maxs - mins))
-train_ <- scaled[index,]
-test_ <- scaled[-index,]
+maxs <- apply(Boston, 2, max) 
+mins <- apply(Boston, 2, min)
+scaled <- as.data.frame(scale(Boston, center = mins, scale = maxs - mins))
+train_ <- scaled[index, ]
+test_ <- scaled[-index, ]
 n <- names(train_)
-f <- as.formula(paste("medv ~", paste(n[!n %in% "medv"], 
-            collapse = " + ")))
-nn <- neuralnet(f, data=train_,hidden=c(5,3),linear.output=T)
+f <- as.formula(paste("medv ~", paste(n[!n %in% "medv"], collapse = " + ")))
+nn <- neuralnet(f, data=train_, hidden=c(5,3), linear.output=T)
 ```
 
 ## An example of DNN cont...
@@ -219,11 +216,11 @@ plot(nn, rep = "best")
 
 ## An example of DNN cont...
 ```{r echo=TRUE}
-pr.nn <- compute(nn,test_[, 1:13])
-pr.nn_ <- pr.nn$net.result*(max(data$medv)
-              - min(data$medv)) + min(data$medv)
-test.r <- (test_$medv)*(max(data$medv) - min(data$medv))
-             + min(data$medv)
+pr.nn <- compute(nn,test_[,1:13])
+pr.nn_ <- pr.nn$net.result*(max(Boston$medv)
+          -min(Boston$medv))+min(Boston$medv)
+test.r <- (test_$medv)*(max(Boston$medv)
+              -min(Boston$medv))+min(Boston$medv)
 MSE.nn <- sum((test.r - pr.nn_)^2)/nrow(test_)
 print(paste(MSE.lm, MSE.nn))
 ```
@@ -236,6 +233,7 @@ points(test$medv, pr.lm, col='blue', pch=18, cex=0.7)
 abline(0,1,lwd=2)
 legend('bottomright', legend=c('NN','LM'), pch=18, col=c('red', 'blue'))
 ```
+
 
 ## Applications of ML
 - $\color{blue}{\text{Data mining:}}$ web click data, medical records, Google search.
