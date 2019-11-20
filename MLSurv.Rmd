@@ -528,6 +528,12 @@ datatable(dt, rownames = FALSE, autoHideNavigation = T,
 - Professor Ming-Hui Chen, Statistics, UConn.
 - STAT 5645 (Fall 2019) class audience.
 
+## Some additional resources
+- Hastie, T., Tibshirani, R., Friedman, J., & Franklin, J. (2005). The elements of statistical learning: data mining, inference and prediction. The Mathematical Intelligencer, 27(2), 83-85.
+- For baggin decision tree: https://www.youtube.com/watch?v=2Mg8QD0F1dQ
+- For random forest decision tree: https://www.youtube.com/watch?v=J4Wdy0Wc_xQ
+
+
 ## Thanks
 - Good luck with survival analysis.
 - Feel free to contact for further queries: mdtuhin.sheikh@uconn.edu.
